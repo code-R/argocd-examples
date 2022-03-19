@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: patient-svc-helm-patient
+  labels:
+    app: helm-patient
+    chart: helm-patient-0.1.0
+    release: patient-svc
+    heritage: Helm
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 8000
+      protocol: TCP
+      name: http
+  selector:
+    app: helm-patient
+    release: patient-svc
