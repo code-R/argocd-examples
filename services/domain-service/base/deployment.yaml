@@ -1,27 +1,28 @@
+# Source: helm-domain/templates/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: patient-svc-helm-patient
+  name: domain-svc-helm-domain
   labels:
-    app: helm-patient
-    chart: helm-patient-0.1.0
-    release: patient-svc
+    app: helm-domain
+    chart: helm-domain-0.1.0
+    release: domain-svc
     heritage: Helm
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: helm-patient
-      release: patient-svc
+      app: helm-domain
+      release: domain-svc
   template:
     metadata:
       labels:
-        app: helm-patient
-        release: patient-svc
+        app: helm-domain
+        release: domain-svc
     spec:
       containers:
-        - name: helm-patient
+        - name: helm-domain
           image: "mven/p-service:sha-83b67df"
           imagePullPolicy: IfNotPresent
           ports:
