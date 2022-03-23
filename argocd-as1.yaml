@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: argocd-applicationset
+  name: argocd-applicationset1
 spec:
   generators:
   - git:
@@ -17,7 +17,7 @@ spec:
       source:
         repoURL: https://github.com/code-R/argocd-examples
         targetRevision: HEAD
-        path: '{{path}}/overlays/production'
+        path: '{{path}}/overlays/staging'
       destination:
         server: https://kubernetes.default.svc
-        namespace: production
+        namespace: staging

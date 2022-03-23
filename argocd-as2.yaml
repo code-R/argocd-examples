@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: argocd-applicationset2
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/code-R/argocd-examples
+      revision: HEAD
+      directories:
+      - path: services/*
+  template:
+    metadata:
+      name: '{{path.basename}}'
+    spec:
+      project: production
+      source:
+        repoURL: https://github.com/code-R/argocd-examples
+        targetRevision: HEAD
+        path: '{{path}}/overlays/production'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: production
