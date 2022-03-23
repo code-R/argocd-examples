@@ -11,7 +11,7 @@ spec:
       - path: services/*
   template:
     metadata:
-      name: '{{path.basename}}'
+      name: '{{path.basename}}-production'
     spec:
       project: production
       source:

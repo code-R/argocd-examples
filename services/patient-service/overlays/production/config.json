@@ -1,0 +1,4 @@
+{
+  "namespace": "production",
+  "docker_image": "p-service"
+}
