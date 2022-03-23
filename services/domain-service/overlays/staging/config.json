@@ -1,6 +1,6 @@
 {
   "name": "domain",
-  "namespace": "production",
+  "namespace": "staging",
   "docker_image": "d-service",
   "ap_path": "services/domain-service/overlays/staging"
 }
