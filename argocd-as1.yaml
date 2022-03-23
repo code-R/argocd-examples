@@ -14,6 +14,7 @@ spec:
       name: '{{name}}-{{namespace}}'
       annotations:    
         argocd-image-updater.argoproj.io/image-list: 'mven/{{docker_image}}'
+        argocd-image-updater.argoproj.io/mven.update-strategy: latest
         argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/git-creds
         argocd-image-updater.argoproj.io/git-branch: main
     spec:
