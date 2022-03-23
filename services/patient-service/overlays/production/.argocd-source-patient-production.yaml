@@ -1,0 +1,3 @@
+kustomize:
+  images:
+  - mven/p-service:sha-f9d7094
