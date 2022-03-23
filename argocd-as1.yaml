@@ -11,7 +11,7 @@ spec:
       - path: services/**/overlays/**/config.json
   template:
     metadata:
-      name: '{{path.basename}}-{{namespace}}'
+      name: '{{name}}-{{namespace}}'
       annotations:    
         argocd-image-updater.argoproj.io/image-list: 'mven/{{docker_image}}'
         argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/git-creds
@@ -21,7 +21,7 @@ spec:
       source:
         repoURL: https://github.com/code-R/argocd-examples
         targetRevision: HEAD
-        path: '{{path}}/overlays/{{namespace}}'
+        path: '{{ap_path}}'
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{namespace}}'

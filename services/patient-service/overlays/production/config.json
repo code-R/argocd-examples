@@ -1,4 +1,6 @@
 {
+  "name": "patient",
   "namespace": "production",
-  "docker_image": "p-service"
+  "docker_image": "p-service",
+  "ap_path": "services/patient-service/overlays/production"
 }

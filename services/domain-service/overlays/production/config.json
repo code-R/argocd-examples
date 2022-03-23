@@ -1,4 +1,6 @@
 {
-    "namespace": "production",
-    "docker_image": "d-service"
-  }
+  "name": "domain",
+  "namespace": "production",
+  "docker_image": "d-service",
+  "ap_path": "services/domain-service/overlays/production"
+}
